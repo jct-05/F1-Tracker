@@ -78,3 +78,6 @@ gem 'active_model_serializers'
 
 # Alternative: much faster, less flexible (from the creators of JSON:API)
 # gem 'fast_jsonapi'
+
+# Communication between React and Rails
+gem 'rack-cors'
