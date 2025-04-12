@@ -1,0 +1,39 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: f1_tracker_api_development
+  # Leave username/password blank → uses OS username
+  # You can uncomment the lines below if needed:
+  # username: josh
+  # password:
+  # host: localhost
+  # port: 5432
+
+test:
+  <<: *default
+  database: f1_tracker_api_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  url: <%= ENV['DATABASE_URL'] %>
+
+cable:
+  production:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
+
+queue:
+  production:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
+
+cache:
+  production:
+    adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
