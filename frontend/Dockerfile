@@ -11,8 +11,8 @@ RUN npm install
 # Copy rest of the app files
 COPY . .
 
-# Expose the Vite dev server port
-EXPOSE 3000
+# Expose the CRA dev server port
+EXPOSE 3001
 
 # Start the React dev server
 CMD ["npm", "start"]
